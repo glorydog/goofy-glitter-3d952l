@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 206 0 25; /* #ce0019 */
+    --color-primary-dark: 158 0 20; /* #9e0014 */
+    --color-background: 28 28 28; /* #1c1c1c */
+    --color-surface: 44 44 44; /* #2c2c2c */
+    --color-surface-light: 60 60 60; /* #3c3c3c */
+    --color-text: 255 255 255; /* #ffffff */
+    --color-text-secondary: 160 160 160; /* #a0a0a0 */
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text min-h-screen font-sans;
+  }
+}
+
+@layer components {
+  .dashboard-container {
+    @apply grid min-h-screen;
+    grid-template-columns: 240px 1fr;
+  }
+
+  .sidebar {
+    @apply bg-surface border-r border-surface-light;
+  }
+
+  .card {
+    @apply bg-surface rounded-lg shadow-md;
+  }
+
+  .tab-button {
+    @apply flex items-center px-4 py-2 w-full text-left transition-all rounded-lg;
+  }
+
+  .tab-button:hover {
+    @apply bg-surface-light;
+  }
+
+  .tab-button.active {
+    @apply bg-primary text-white;
+  }
+}
